@@ -1,0 +1,212 @@
+:root {
+            --solar: #FF6B00;
+            --lunar: #00C2FF;
+            --magic: #C96CFF;
+            --quantum: #00FF9D;
+            --dark: #0F1726;
+            --light: #1E293B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark), #1a1f2d);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--solar), var(--lunar), var(--magic));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .solar .icon { background: linear-gradient(135deg, var(--solar), #FF9E58); }
+        .lunar .icon { background: linear-gradient(135deg, var(--lunar), #5BDCFF); }
+        .magic .icon { background: linear-gradient(135deg, var(--magic), #D89CFF); }
+        .quantum .icon { background: linear-gradient(135deg, var(--quantum), #5AFFC8); }
+
+        .icon svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .unit {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-left: 5px;
+        }
+
+        .graph-container {
+            height: 150px;
+            margin-top: 20px;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .chart-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .chart-title svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .bar-chart {
+            display: flex;
+            height: 200px;
+            align-items: flex-end;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .bar {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bar-fill {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            transition: height 1.5s ease-out;
+        }
+
+        .bar-label {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .pie-container {
+            display: flex;
+            justify-content: center;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
